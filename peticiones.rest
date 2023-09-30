@@ -1,0 +1,97 @@
+@hostname = http://localhost
+@port = 3000
+@url = {{hostname}}:{{port}}
+
+###
+
+GET {{url}}/api/products
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjUxNTJjNjkzYzZiZWU0MWY5NjYxMDk5Iiwicm9sZSI6Im1vZGVyYXRvciIsImlhdCI6MTY5NTg5NTkzNn0.H-XBK7TzocNh9SWDiOhHZipKshJKas0ldVPQri3r2J0
+
+###
+
+POST {{url}}/api/products
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjUxNTJjNjkzYzZiZWU0MWY5NjYxMDk5Iiwicm9sZSI6Im1vZGVyYXRvciIsImlhdCI6MTY5NTg5NTkzNn0.H-XBK7TzocNh9SWDiOhHZipKshJKas0ldVPQri3r2J0
+
+{
+  "name": "Teclado wireless",
+  "description": "Olvidate de los cables",
+  "price": 24.95,
+  "available": true,
+  "stock": 12,
+  "department": "irmatica",
+  "image": ""
+}
+
+###
+
+PUT {{url}}/api/products/650f1f6112c2416749bfdf70
+Content-Type: application/json
+
+{
+  "price": 200,
+  "available": true
+}
+
+###
+DELETE {{url}}/api/products/650f1f6112c2416749bfdf70
+
+
+###
+GET {{url}}/api/products/moda
+###
+GET {{url}}/api/products/min/4/max/60
+
+###
+GET {{url}}/api/products/actives
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjUxNTJjNjkzYzZiZWU0MWY5NjYxMDk5Iiwicm9sZSI6Im1vZGVyYXRvciIsImlhdCI6MTY5NTg5NTkzNn0.H-XBK7TzocNh9SWDiOhHZipKshJKas0ldVPQri3r2J0
+###
+
+post {{url}}/api/users/register
+Content-Type: application/json
+
+{
+  "username": "ta",
+  "email": "carmencitagmail.com",
+  "password": "3456",
+  "age": 65,
+  "role": "reglar",
+  "active": true
+}
+###
+post {{url}}/api/users/login
+Content-Type: application/json
+
+{
+  "email": "carmencita@gmail.com",
+  "password": "3456"
+}
+###
+
+GET {{url}}/api/users/cart/add/651453ba91989fb97ccfad56
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjUxNDY5NzI4ZmI1M2Y1ODQwNjg0Mjk2Iiwicm9sZSI6InJlZ3VsYXIiLCJpYXQiOjE2OTU4MzY1NjF9._1WNutTVslcRSSAokJYSsUmyaY2qpfipOYj0Xf-lnwE
+
+###
+GET {{url}}/api/users/cart/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjUxNDY5NzI4ZmI1M2Y1ODQwNjg0Mjk2Iiwicm9sZSI6InJlZ3VsYXIiLCJpYXQiOjE2OTU4MzY2NTF9.VGsbA2l2NIfW2eoCLRnYUDFC57B8nY5rwnxoicZ6gMQ
+
+###
+GET {{url}}/api/users/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjUxNDY5NzI4ZmI1M2Y1ODQwNjg0Mjk2Iiwicm9sZSI6InJlZ3VsYXIiLCJpYXQiOjE2OTU4NDU3ODN9.mAPIKTXNWo4Mqros5wHdjGj8Ls2YwM4Nz64HTEoUyS0
+###
+GET {{url}}/api/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjUxNDY5NzI4ZmI1M2Y1ODQwNjg0Mjk2Iiwicm9sZSI6InJlZ3VsYXIiLCJpYXQiOjE2OTU4NDU3ODN9.mAPIKTXNWo4Mqros5wHdjGj8Ls2YwM4Nz64HTEoUyS0
+###
+PUT {{url}}/api/users/65152c693c6bee41f9661099
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjUxNDY5NzI4ZmI1M2Y1ODQwNjg0Mjk2Iiwicm9sZSI6InJlZ3VsYXIiLCJpYXQiOjE2OTU4NDU3ODN9.mAPIKTXNWo4Mqros5wHdjGj8Ls2YwM4Nz64HTEoUyS0
+Content-Type: application/json
+
+{
+   "role": "moderator" 
+}
+###
+
+GET {{url}}/api/users/cart/remove/650ff135a5c23f37ddd73fd8
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjUxNDY5NzI4ZmI1M2Y1ODQwNjg0Mjk2Iiwicm9sZSI6InJlZ3VsYXIiLCJpYXQiOjE2OTU4NDU3ODN9.mAPIKTXNWo4Mqros5wHdjGj8Ls2YwM4Nz64HTEoUyS0
+Content-Type: application/json
+

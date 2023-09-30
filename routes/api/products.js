@@ -9,12 +9,31 @@ const fs = require('fs')
 
 
 router.get('/', async (req, res) => {
+
+  const { page = 1, limit = 5 } = req.query
+
+  /*
+  * page = 1 skip= 0 limit=5
+  * page = 2 skip= 5 limit=5
+  * page = 3 skip 10 limit= 5
+  * Por la tanto skip = (page -1) * limit
+   */
+  
+
   try {
-    const products = await Product.find().populate('owner')
-    for (let product of products) {
-      console.log(product.price_tax)
-    }
-    res.json(products)    
+    const products = await Product.find()
+      .skip((page - 1) * limit)
+      .limit(limit)
+      .populate('owner')
+    const total = await Product.count()
+    console.log(total)
+    res.json({
+      info: {
+        current_page: page,
+        count: total,
+        pages: Math.ceil(total/limit)
+      }
+    })    
   } catch (err) {
     res.json({ fatal: err.message })    
   }

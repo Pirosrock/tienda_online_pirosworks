@@ -1,6 +1,7 @@
 @hostname = http://localhost
 @port = 3000
 @url = {{hostname}}:{{port}}
+@url_prod = https://tienda-online-nnct.onrender.com
 
 ###
 

@@ -10,7 +10,7 @@ const fs = require('fs')
 
 router.get('/', async (req, res) => {
 
-  const { page = 1, limit = 5 } = req.query
+  const { page = 1, limit = 6 } = req.query
 
   /*
   * page = 1 skip= 0 limit=5
@@ -29,10 +29,11 @@ router.get('/', async (req, res) => {
     console.log(total)
     res.json({
       info: {
-        current_page: page,
+        current_page: parseInt(page),
         count: total,
         pages: Math.ceil(total/limit)
-      }
+      },
+      results: products
     })    
   } catch (err) {
     res.json({ fatal: err.message })    
